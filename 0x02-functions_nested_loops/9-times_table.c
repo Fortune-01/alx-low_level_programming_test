@@ -1,19 +1,48 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * main - prints the mulitiplicaton table
- * mulitples of 9
- * Returns 0.
+ * times_table -prints tables
+ *
+ * Return: Always 0.
  */
 void times_table(void)
 {
-	int n = 9;
+	int a;
+	int b;
+	int c;
 
-	for (int i = 0; i < 30; i++)
+	for (a = 0; a <= 9; a++)
 	{
-		printf("%d X %d = %d\n", n, i, n * i);
+		for (b = 0; b <= 9; b++)
+		{
+			c = a * b;
+			if ((c / 10) == 0)
+			{
+				if (b == 0)
+				{
+					_putchar ('0');
+				}
+				if (b != 0)
+				{
+					_putchar (' ');
+					_putchar ((c % 10) + '0');
+				}
+				if (b < 9)
+				{
+					_putchar(',');
+					_putchar (' ');
+				}
+			}
+			else
+			{
+				_putchar ((c / 10) + '0');
+				_putchar ((c % 10) + '0');
+				if (b < 9)
+				{
+					_putchar(',');
+					_putchar (' ');
+				}
+			}
+		}
+		_putchar ('\n');
 	}
-
-	return;
 }
